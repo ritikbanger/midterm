@@ -7,8 +7,8 @@ import pandas as pd
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-model = pickle.load(open('/midterm.pkl', 'rb')) 
-dataset= pd.read_csv('/Classification Dataset1.csv')
+model = pickle.load(open('midterm.pkl', 'rb')) 
+dataset= pd.read_csv('Classification Dataset1.csv')
 X = dataset.iloc[:, 1:10].values
 
 # Taking care of missing data

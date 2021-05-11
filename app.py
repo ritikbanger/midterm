@@ -8,7 +8,7 @@ import pandas as pd
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
 model = pickle.load(open('midterm.pkl', 'rb')) 
-dataset= pd.read_csv('Classification Dataset1.csv')
+dataset= pd.read_csv('Ritik Banger - Classification Dataset1.csv')
 X = dataset.iloc[:, 1:10].values
 
 # Taking care of missing data
@@ -55,11 +55,11 @@ def predict_note_authentication(CreditScore, Geography, Gender, Age, Tenure, Bal
                                 EstimatedSalary):
     output = model.predict(sc.transform(
         [[CreditScore, Geography, Gender, Age, Tenure, Balance, HasCrCard, IsActiveMember, EstimatedSalary]]))
-    print("Customer will leave =", output)
+    print("Customer will Exited =", output)
     if output == [1]:
-        prediction = "Customer will Leave"
+        prediction = "Customer Exited = 1"
     else:
-        prediction = "Customer will not Leave"
+        prediction = "Customer Exited = 0"
     print(prediction)
     return prediction
 

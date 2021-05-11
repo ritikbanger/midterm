@@ -7,8 +7,7 @@ import pandas as pd
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-pickle_in = open('/content/drive/MyDrive/midterm.pkl','rb')
-model=pickle.load(pickle_in)
+model = pickle.load(open('/midterm.pkl', 'rb')) 
 dataset= pd.read_csv('/content/drive/MyDrive/Ritik Banger - Classification Dataset1 (1).csv')
 X = dataset.iloc[:, 1:10].values
 
